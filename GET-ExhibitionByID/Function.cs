@@ -58,20 +58,20 @@ public class Function
                     ExhibitionPublic = item.GetValueOrDefault("ExhibitionPublic")?.N ?? item.GetValueOrDefault("ExhibitionPublic")?.S,
                     ExhibitContent = item.GetValueOrDefault("ExhibitContent")?.L?.Select(content => new
                     {
-                        CreationDate = content.M?.GetValueOrDefault("CreationDate")?.N,
-                        ItemClassification = content.M?.GetValueOrDefault("ItemClassification")?.S,
-                        ItemObjectLink = content.M?.GetValueOrDefault("ItemObjectLink")?.S,
-                        ItemDepartment = content.M?.GetValueOrDefault("ItemDepartment")?.S,
-                        ItemTitle = content.M?.GetValueOrDefault("ItemTitle")?.S,
-                        ArtistBirthplace = content.M?.GetValueOrDefault("ArtistBirthplace")?.S,
-                        ArtistName = content.M?.GetValueOrDefault("ArtistName")?.S,
-                        ItemTechnique = content.M?.GetValueOrDefault("ItemTechnique")?.S,
-                        ItemCentury = content.M?.GetValueOrDefault("ItemCentury")?.S,
-                        ItemCreditline = content.M?.GetValueOrDefault("ItemCreditline")?.S,
-                        ItemID = content.M?.GetValueOrDefault("ItemID")?.N
+                        CreationDate = content.M?.GetValueOrDefault("CreationDate")?.ToString(),
+                        ItemCreditline = content.M?.GetValueOrDefault("ItemCreditline")?.ToString(),
+                        ItemDepartment = content.M?.GetValueOrDefault("ItemDepartment")?.ToString(),
+                        ItemID = content.M?.GetValueOrDefault("ItemID")?.ToString(),
+                        ItemClassification = content.M?.GetValueOrDefault("ItemClassification")?.ToString(),
+                        ItemTechnique = content.M?.GetValueOrDefault("ItemTechnique")?.ToString(),
+                        ItemTitle = content.M?.GetValueOrDefault("ItemTitle")?.ToString(),
+                        ItemURL = content.M?.GetValueOrDefault("ItemImageURL")?.ToString(),
+                        ItemObjectLink = content.M?.GetValueOrDefault("ItemObjectLink")?.ToString(),
+                        ItemCentury = content.M?.GetValueOrDefault("ItemCentury")?.ToString(),
 
                     }).ToList()
                 }).ToList();
+
 
                 log.LogInformation($"Query completed. Result: {transformedResults}");
                 return new APIGatewayHttpApiV2ProxyResponse
