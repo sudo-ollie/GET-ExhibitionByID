@@ -58,16 +58,16 @@ public class Function
                     ExhibitionPublic = item.GetValueOrDefault("ExhibitionPublic")?.N ?? item.GetValueOrDefault("ExhibitionPublic")?.S,
                     ExhibitContent = item.GetValueOrDefault("ExhibitContent")?.L?.Select(content => new
                     {
-                        CreationDate = content.M?.GetValueOrDefault("CreationDate")?.ToString(),
-                        ItemCreditline = content.M?.GetValueOrDefault("ItemCreditline")?.ToString(),
-                        ItemDepartment = content.M?.GetValueOrDefault("ItemDepartment")?.ToString(),
-                        ItemID = content.M?.GetValueOrDefault("ItemID")?.ToString(),
-                        ItemClassification = content.M?.GetValueOrDefault("ItemClassification")?.ToString(),
-                        ItemTechnique = content.M?.GetValueOrDefault("ItemTechnique")?.ToString(),
-                        ItemTitle = content.M?.GetValueOrDefault("ItemTitle")?.ToString(),
-                        ItemURL = content.M?.GetValueOrDefault("ItemImageURL")?.ToString(),
-                        ItemObjectLink = content.M?.GetValueOrDefault("ItemObjectLink")?.ToString(),
-                        ItemCentury = content.M?.GetValueOrDefault("ItemCentury")?.ToString(),
+                        CreationDate = content.M?.GetValueOrDefault("CreationDate")?.S.ToString(),
+                        ItemCreditline = content.M?.GetValueOrDefault("ItemCreditline")?.S.ToString(),
+                        ItemDepartment = content.M?.GetValueOrDefault("ItemDepartment")?.S.ToString(),
+                        ItemID = content.M?.GetValueOrDefault("ItemID")?.N.ToString(),
+                        ItemClassification = content.M?.GetValueOrDefault("ItemClassification")?.S.ToString(),
+                        ItemTechnique = content.M?.GetValueOrDefault("ItemTechnique")?.S.ToString(),
+                        ItemTitle = content.M?.GetValueOrDefault("ItemTitle")?.S.ToString(),
+                        ItemURL = content.M?.GetValueOrDefault("ItemImageURL")?.S.ToString(),
+                        ItemObjectLink = content.M?.GetValueOrDefault("ItemObjectLink")?.S.ToString(),
+                        ItemCentury = content.M?.GetValueOrDefault("ItemCentury")?.S.ToString(),
 
                     }).ToList()
                 }).ToList();
